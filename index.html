@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORS in Node.js</title>
+</head>
+<body>
+    <h1>CORS in Node.js</h1>
+    <h1>This is the front-end project</h1>
+    <h2>We will send a request from this front-end page to the backend server</h2>
+    <script>
+        fetch("http://localhost:8080/data")
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error('Network response was not ok ' + res.statusText);
+                }
+                return res.json();
+            })
+            .then(data => console.log(data))
+            .catch(error => console.error('There was a problem with the fetch operation:', error));
+    </script>
+</body>
+</html>
